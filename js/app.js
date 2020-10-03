@@ -1,6 +1,7 @@
 'use strict';
 
 let wordArray= [];
+let uniqueWordArray = [];
 
 function Word (word, status){
   this.word=word;
@@ -10,13 +11,32 @@ function Word (word, status){
 
 new Word('oodja boodja', false);
 new Word('chumbles', false);
-console.log(wordArray);
+new Word('smidge', true);
+
 
 function renderWord (){
-  $('.mainSection').append(wordArray[0]);
+  $('.mainSection').append(wordArray[0].word);
 }
 
-$(document).ready(function () {
-  renderWord();
-});
 
+
+
+function getRandomNumber(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function getRandomWord(){
+  var randomWord = getRandomNumber(wordArray.length);
+  while(uniqueWordArray.includes(randomWord)){
+    randomWord = getRandomNumber(wordArray.length);
+  }
+  uniqueWordArray.push(randomWord);
+
+  if(uniqueWordArray.length > 6){
+    uniqueWordArray.shift();
+  }
+  console.log(wordArray[randomWord].word);
+}
+
+getRandomWord();
+renderWord();
