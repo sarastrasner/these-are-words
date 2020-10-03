@@ -13,12 +13,6 @@ new Word('oodja boodja', false);
 new Word('chumbles', false);
 new Word('smidge', true);
 
-
-function renderWord (){
-  $('.mainSection').append(wordArray[0].word);
-}
-
-
 function getRandomNumber(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -34,7 +28,9 @@ function getRandomWord(){
     uniqueWordArray.shift();
   }
   console.log(wordArray[randomWord].word);
+  $('.mainSection').append(wordArray[randomWord].word);
+
 }
 
 getRandomWord();
-renderWord();
+
