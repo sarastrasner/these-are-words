@@ -19,8 +19,6 @@ function renderWord (){
 }
 
 
-
-
 function getRandomNumber(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
