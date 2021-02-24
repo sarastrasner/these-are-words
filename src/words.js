@@ -6,7 +6,6 @@ function Words() {
 
   const showWord = () =>{
     setIndex(Math.floor(Math.random() * Math.floor(words.length)));
-    console.log(words[index]);
   };
 
   return (
