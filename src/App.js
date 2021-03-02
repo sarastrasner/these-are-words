@@ -6,7 +6,7 @@ import './app.scss';
 function App() {
   return (
     <div>
-      <h1>These are words.</h1>
+      <h1>These are words that I like.</h1>
       <Words />
     </div>
   );
